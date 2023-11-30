@@ -1,0 +1,107 @@
+  <div class="container pt-5">
+    <div class="row align-items-center justify-content-between">
+  
+      <div class="col-lg-2 col-md-3 col-sm-4 col-7">
+        <div class="input-group input-group-sm">
+         
+          <select (change)="filterPro($event)">
+            <option value="">Select categories</option>
+            <option *ngFor="let cat of categories" value="{{cat}}">{{cat}}</option>
+        </select>
+        </div>
+      </div>
+    
+  
+      <div class="col-md-3 order-md-0 mt-2 mt-md-0">
+       
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="container">
+    <hr />
+  </div>
+  
+  <div class="container">
+    <div class="row">
+  
+      <div *ngFor="let product of products?.products" class="col-md-4 mb-3">
+        <div [routerLink]="['product/'+ product?.id]" class="card h-100" [routerLink]="['product/'+ product?.id]">
+          <div class="d-flex justify-content-between position-absolute w-100">
+            <div class="label-new">
+              <span class="text-white bg-success small d-flex align-items-center px-2 py-1">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <span class="ml-1">New</span>
+              </span>
+            </div>
+            <div class="label-sale">
+              <span class="text-white bg-primary small d-flex align-items-center px-2 py-1">
+                <i class="fa fa-tag" aria-hidden="true"></i>
+                <span class="ml-1">Sale</span>
+              </span>
+            </div>
+          </div>
+          
+            <img src="{{ product.thumbnail }}" class="card-img-top" alt="Product">
+         
+          <div class="card-body px-2 pb-2 pt-1">
+            <div class="d-flex justify-content-between">
+              <div>
+                <p class="h4 text-primary">{{ product.price | currency }}</p>
+              </div>
+              <div>
+                <a href="#" class="text-secondary lead" data-toggle="tooltip" data-placement="left" title="Compare">
+                  <i class="fa fa-line-chart" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <p class="text-warning d-flex align-items-center mb-2">
+              {{product.rating}} &nbsp;
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </p>
+            <p class="mb-0">
+              <strong>
+                <a href="#" class="text-secondary"> {{ product.title }}</a>
+              </strong>
+            </p>
+            <p class="mb-1">
+              <small>
+                <a href="#" class="text-secondary">{{ product.brand }}</a>
+              </small>
+            </p>
+            <div class="d-flex mb-3 justify-content-between">
+              <div>
+                {{product.description}}
+              </div>
+             
+            </div>
+            <div class="d-flex justify-content-between">
+              <div class="col px-0">
+                <button class="btn btn-outline-primary btn-block">
+                  View 
+                </button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    
+  
+     
+  
+    </div>
+  </div>
+  
+  
+  <div class="container">
+    <hr />
+  </div>
+  
+ 
