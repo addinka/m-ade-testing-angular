@@ -27,7 +27,7 @@
     <div class="row">
   
       <div *ngFor="let product of products?.products" class="col-md-4 mb-3">
-        <div [routerLink]="['product/'+ product?.id]" class="card h-100" [routerLink]="['product/'+ product?.id]">
+        <div [routerLink]="['product/'+ product?.id]" class="card h-100">
           <div class="d-flex justify-content-between position-absolute w-100">
             <div class="label-new">
               <span class="text-white bg-success small d-flex align-items-center px-2 py-1">
@@ -48,7 +48,7 @@
           <div class="card-body px-2 pb-2 pt-1">
             <div class="d-flex justify-content-between">
               <div>
-                <p class="h4 text-primary">{{ product.price | currency }}</p>
+                <p class="h4 text-primary">$ {{ product.price}}</p>
               </div>
               <div>
                 <a href="#" class="text-secondary lead" data-toggle="tooltip" data-placement="left" title="Compare">
